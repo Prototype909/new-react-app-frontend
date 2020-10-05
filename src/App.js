@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import HomeContainer from './Containers/HomeContainer.js';
+import RecipesContainer from './Containers/RecipesContainer.js';
+import CreateRecipeContainer from './Containers/CreateRecipeContainer.js';
+import RecipeShowContainer from './Containers/RecipeShowContainer.js';
 
-function App() {
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <Route exact path='/' component={HomeContainer} />
+      <Route exact path='/recipes' component={RecipesContainer} />
+      <Route exact path='/createrecipe' component={CreateRecipeContainer} />
+      <Route path='/recipes/:id' component={RecipeShowContainer} />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
