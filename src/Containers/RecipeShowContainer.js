@@ -17,7 +17,7 @@ class RecipeShowContainer extends React.Component{
         return (
             <div>
                 <h1>{this.state.title}</h1>
-                <img src={this.state.image_url}></img>
+                <img src={this.state.image_url} alt={this.state.image}></img>
                 <p>{this.state.text}</p>
                 <HomeLink />
                 <Link to="/recipes">Back</Link> 
