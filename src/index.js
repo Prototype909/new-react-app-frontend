@@ -5,11 +5,13 @@ import App from './App';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import Home from './Containers/HomeContainer.js'
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, } from 'redux';
 import RecipeReducer from './Reducers/RecipeReducer'
 import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-const store = createStore(RecipeReducer, applyMiddleware(thunk))
+
+const store = createStore(RecipeReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>

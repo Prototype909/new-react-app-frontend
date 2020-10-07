@@ -6,6 +6,10 @@ import HomeLink from './HomeLink'
 const RecipeCardsContainer = (props) => {
     console.log(props)
     // debugger
+    if (!props.recipes) {
+        return <div>Loading...</div>
+    }
+    
     let recipes = props.recipes.map(recipe => {
         return(
             <RecipeCard

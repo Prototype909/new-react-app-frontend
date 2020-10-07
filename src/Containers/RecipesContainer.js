@@ -58,7 +58,7 @@ class RecipesContainer extends React.Component{
                     <button onClick={() =>this.alphabetize('za')}><ZtoA /></button>
                 </div>
                 <RecipeCardsContainer
-                    recipes={this.props.recipes.data}
+                    recipes={this.props.recipes}
                 />
             </div>
         )
