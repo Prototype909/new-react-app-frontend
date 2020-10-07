@@ -34,12 +34,12 @@ class RecipesContainer extends React.Component{
     alphabetize = (order) => {
         if (order === 'az') {
             this.setState({
-                displayRecipes: this.props.recipes.data.sort((a, b) => (a.title > b.title) ? 1 : -1)
+                displayRecipes: this.props.recipes.sort((a, b) => (a.title > b.title) ? 1 : -1)
             })
         }
         if (order === 'za') {
             this.setState({
-                displayRecipes: this.props.recipes.data.sort((a, b) => (a.title < b.title) ? 1 : -1)
+                displayRecipes: this.props.recipes.sort((a, b) => (a.title < b.title) ? 1 : -1)
             })
         }
 
