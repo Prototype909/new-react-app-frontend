@@ -47,7 +47,7 @@ class CreateRecipeContainer extends React.Component{
             text: this.state.text,
             image_link: this.state.image_link
         }
-         debugger
+        //  debugger
         this.props.addRecipes(recipe)
         this.setState({
             title: "",
