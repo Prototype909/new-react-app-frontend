@@ -20,6 +20,7 @@ class RecipeShowContainer extends React.Component{
                 <h1>{this.state.title}</h1>
                 <img src={this.state.image_url} alt={this.state.image_url}></img>
                 <p>{this.state.text}</p>
+                
                 <HomeLink />
                 <Link to="/recipes">Back</Link> 
             </div>
