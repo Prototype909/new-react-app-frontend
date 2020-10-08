@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import HomeLink from './HomeLink'
 import AtoZ from '../Components/AtoZ'
 import ZtoA from '../Components/ZtoA'
-import { orderRecipes } from '../Containers/RecipesContainer'
+// import { orderRecipes } from '../Containers/RecipesContainer'
 
 
 
@@ -32,7 +32,7 @@ const RecipeCardsContainer = (props) => {
         <div className="RecipeCardsContainer">
             <h1>Recipes:</h1>
                 <div class="sorting">
-                    <button onClick={() => orderRecipes('az')}><AtoZ /></button>
+                    <button onClick={() => props.orderRecipes('az')}><AtoZ /></button>
                     <button onClick={() => props.alphabetize('za')}><ZtoA /></button>
                 </div>
             {recipes}<br></br>
