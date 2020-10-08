@@ -73,7 +73,7 @@ class CreateRecipeContainer extends React.Component{
 
     render() {
         return (
-            <div>
+            <div><br/><br/>
                 <h1>Create a Recipe:</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>
@@ -88,8 +88,8 @@ class CreateRecipeContainer extends React.Component{
                         Image Link:
                     <input type="text" value={this.state.value} onChange={this.handleImageLinkChange} />
                     </label><br></br>
-                    <input type="submit" value="Submit" />
-                    <HomeLink />
+                    <input type="submit" value="Submit" /><br/>
+                    
                     <Link to="/recipes">Back</Link> 
                 </form>
             </div>

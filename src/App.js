@@ -8,11 +8,12 @@ import HomeContainer from './Containers/HomeContainer.js';
 import RecipesContainer from './Containers/RecipesContainer.js';
 // import CreateRecipeContainer from './Containers/CreateRecipeContainer.js';
 // import RecipeShowContainer from './Containers/RecipeShowContainer.js';
-// import { NavBar} from './Components/'
+import { NavBar} from './Components/NavBar'
 
 
 const App = (props) => {
   return (
+    <div><NavBar/>
     <Router>
       <div className="App">
         <Switch>
@@ -21,6 +22,7 @@ const App = (props) => {
         </Switch>
       </div>
     </Router>
+    </div>
   );
 };
 

@@ -36,7 +36,7 @@ class RecipesContainer extends React.Component{
             return this.props.recipes.sort((a, b) => (a.title > b.title) ? 1 : -1)
         }
         else if (this.state.filter === 'za') {
-            return this.props.recipes.sort((a, b) => (b.title > a.title) ? 1 : -1)
+            return this.props.recipes.sort((b, a) => (b.title > a.title) ? 1 : -1)
         }
         else {
             return this.props.recipes
@@ -65,7 +65,7 @@ class RecipesContainer extends React.Component{
                     <Route exact path='/recipes/new' component={CreateRecipeContainer} />
                     <Route exact path='/recipes/:id' component={({ match }) => {
                         return (
-                            < RecipeCard
+                            < RecipeShowContainer
                                 id={match.params.id}
                                 recipe={ this.props.recipes.find((recipe) => recipe.id === match.params.id)}
                             />
