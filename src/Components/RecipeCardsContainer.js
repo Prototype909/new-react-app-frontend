@@ -2,14 +2,17 @@ import React from 'react';
 import RecipeCard from './RecipeCard.js'
 import { Link } from "react-router-dom";
 import HomeLink from './HomeLink'
+import AtoZ from '../Components/AtoZ'
+import ZtoA from '../Components/ZtoA'
+
 
 const RecipeCardsContainer = (props) => {
     console.log(props)
-    // debugger
+    //  debugger
     if (!props.recipes) {
         return <div>Loading...</div>
     }
-    
+
     let recipes = props.recipes.map(recipe => {
         return(
             <RecipeCard
@@ -21,8 +24,15 @@ const RecipeCardsContainer = (props) => {
             />
         )
     })
+
+ 
     return (
         <div className="RecipeCardsContainer">
+            <h1>Recipes:</h1>
+                <div class="sorting">
+                    <button onClick={() => props.alphabetize('az')}><AtoZ /></button>
+                    <button onClick={() => props.alphabetize('za')}><ZtoA /></button>
+                </div>
             {recipes}<br></br>
             <Link to="/createrecipe">Create a Recipe</Link><br></br>
             <HomeLink />

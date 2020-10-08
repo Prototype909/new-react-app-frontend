@@ -1,21 +1,21 @@
 import React from 'react';
 import RecipeCardsContainer from '../Components/RecipeCardsContainer';
-import AtoZ from '../Components/AtoZ'
-import ZtoA from '../Components/ZtoA'
 import { connect } from 'react-redux'
 import fetchRecipes from '../Actions/RecipeActions'
+import { Route, Switch } from 'react-router-dom';
+import CreateRecipeContainer from './CreateRecipeContainer.js';
+import RecipeShowContainer from './RecipeShowContainer.js';
+import RecipeCard from '../Components/RecipeCard';
+
  
 
 class RecipesContainer extends React.Component{
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //       isLoaded: false,
-    //       recipes: [],
-    //       displayRecipes: []
-    //     }
-    //     this.alphabetize = this.alphabetize.bind(this);
-    // }
+     constructor() {
+         super()
+         this.state = {
+           filter: '',
+         }
+        };
 
     componentDidMount() {
         this.props.fetchRecipes()
@@ -31,18 +31,22 @@ class RecipesContainer extends React.Component{
     //         })
     }
 
-    alphabetize = (order) => {
-        if (order === 'az') {
-            this.setState({
-                displayRecipes: this.props.recipes.sort((a, b) => (a.title > b.title) ? 1 : -1)
-            })
+    orderRecipes = () => {
+        if ( this.state.filter === 'az') {      
+            return this.props.recipes.sort((a, b) => (a.title > b.title) ? 1 : -1)
         }
-        if (order === 'za') {
-            this.setState({
-                displayRecipes: this.props.recipes.sort((a, b) => (a.title < b.title) ? 1 : -1)
-            })
+        else if (this.state.filter === 'za') {
+            return this.props.recipes.sort((a, b) => (b.title > a.title) ? 1 : -1)
         }
+        else {
+            return this.props.recipes
+        }
+    }
 
+    alphabetize = (order) => {
+        this.setState({
+            filter: order
+        })
     }
 
     render() {
@@ -52,18 +56,35 @@ class RecipesContainer extends React.Component{
         }
         return (
             <div>
-                <h1>Recipes:</h1>
-                <div class="sorting">
-                    <button onClick={() => this.alphabetize('az')}><AtoZ /></button>
-                    <button onClick={() =>this.alphabetize('za')}><ZtoA /></button>
-                </div>
-                <RecipeCardsContainer
-                    recipes={this.props.recipes}
-                />
+                <Switch>
+                    <Route exact path='/recipes' >
+                        <RecipeCardsContainer
+                            recipes={this.props.recipes}
+                            alphabetize={this.alphabetize}/>
+                    </Route>
+                    <Route exact path='/recipes/new' component={CreateRecipeContainer} />
+                    <Route exact path='/recipes/:id' component={({ match }) => {
+                        return (
+                            < RecipeCard
+                                id={match.params.id}
+                                recipe={ this.props.recipes.find((recipe) => recipe.id === match.params.id)}
+                            />
+                        )
+                    }}/>
+        
+                </Switch>
+
+
+                
+                
             </div>
         )
     }
 }
 
+const grabInfoFromStore = (stateFromStore) => {
+    // debugger
+    return stateFromStore
+}
 
-export default connect(state => state,{fetchRecipes})(RecipesContainer);
+export default connect(grabInfoFromStore,{fetchRecipes})(RecipesContainer);

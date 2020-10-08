@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import HomeLink from '../Components/HomeLink'
+import { NavBar } from '../Components/NavBar';
+import { connect } from 'react-redux'
 
 
 
@@ -20,7 +22,7 @@ class RecipeShowContainer extends React.Component{
                 <h1>{this.state.title}</h1>
                 <img src={this.state.image_url} alt={this.state.image_url}></img>
                 <p>{this.state.text}</p>
-                
+                <NavBar />
                 <HomeLink />
                 <Link to="/recipes">Back</Link> 
             </div>
@@ -29,4 +31,8 @@ class RecipeShowContainer extends React.Component{
     }
 }
 
-export default RecipeShowContainer;
+const grabInfoFromStore = (stateFromStore) => {
+    // debugger
+    return stateFromStore
+}
+export default connect(grabInfoFromStore)(RecipeShowContainer);
