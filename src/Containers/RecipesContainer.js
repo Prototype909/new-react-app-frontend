@@ -5,9 +5,6 @@ import fetchRecipes from '../Actions/RecipeActions'
 import { Route, Switch } from 'react-router-dom';
 import CreateRecipeContainer from './CreateRecipeContainer.js';
 import RecipeShowContainer from './RecipeShowContainer.js';
-import RecipeCard from '../Components/RecipeCard';
-
- 
 
 class RecipesContainer extends React.Component{
      constructor() {
@@ -19,16 +16,6 @@ class RecipesContainer extends React.Component{
 
     componentDidMount() {
         this.props.fetchRecipes()
-    //     fetch("http://localhost:3001/recipes")
-    //     .then(res => res.json())
-    //     .then((result) => {
-    //         console.log(result.data)
-    //             this.setState({
-    //                 isLoaded: true,
-    //                 recipes: result.data,
-    //                 displayRecipes: result.data
-    //             });
-    //         })
     }
 
     orderRecipes = () => {
@@ -50,7 +37,6 @@ class RecipesContainer extends React.Component{
     }
 
     render() {
-        // debugger
         if (this.props.isLoading) {
             return <h1>Loading</h1>
         }
@@ -59,7 +45,7 @@ class RecipesContainer extends React.Component{
                 <Switch>
                     <Route exact path='/recipes' >
                         <RecipeCardsContainer
-                            recipes={this.props.recipes}
+                            recipes={this.orderRecipes()}
                             alphabetize={this.alphabetize}/>
                     </Route>
                     <Route exact path='/recipes/new' component={CreateRecipeContainer} />
@@ -70,20 +56,14 @@ class RecipesContainer extends React.Component{
                                 recipe={ this.props.recipes.find((recipe) => recipe.id === match.params.id)}
                             />
                         )
-                    }}/>
-        
-                </Switch>
-
-
-                
-                
+                    }}/>        
+                </Switch>           
             </div>
         )
     }
 }
 
 const grabInfoFromStore = (stateFromStore) => {
-    // debugger
     return stateFromStore
 }
 

@@ -1,17 +1,11 @@
 import React from 'react';
 import RecipeCard from './RecipeCard.js'
-import { Link } from "react-router-dom";
-import HomeLink from './HomeLink'
 import AtoZ from '../Components/AtoZ'
 import ZtoA from '../Components/ZtoA'
-// import { orderRecipes } from '../Containers/RecipesContainer'
-
-
 
 const RecipeCardsContainer = (props) => {
     console.log(props)
-    //  debugger
-    if (!props.recipes) {
+        if (!props.recipes) {
         return <div>Loading...</div>
     }
 
@@ -32,7 +26,7 @@ const RecipeCardsContainer = (props) => {
         <div className="RecipeCardsContainer">
             <h1>Recipes:</h1>
                 <div class="sorting">
-                    <button onClick={() => props.orderRecipes('az')}><AtoZ /></button>
+                    <button onClick={() => props.alphabetize('az')}><AtoZ /></button>
                     <button onClick={() => props.alphabetize('za')}><ZtoA /></button>
                 </div>
             {recipes}<br></br>

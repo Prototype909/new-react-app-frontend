@@ -12,7 +12,7 @@ class HomeContainer extends React.Component{
 
     render() {
         return (
-            <div>
+            <div><br/><br/>
                 <h1>Steve's Recipes!</h1>
                 <h2>TRY ME RECIPES OR LITERALLY PERISH.</h2>
                 <Link to="/recipes">Recipes</Link> 

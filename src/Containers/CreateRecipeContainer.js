@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import HomeLink from '../Components/HomeLink'
 import { connect } from 'react-redux'
 import { addRecipes } from '../Actions/RecipeActions'
 
@@ -41,34 +40,18 @@ class CreateRecipeContainer extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // debugger
         const recipe = {
             title: this.state.title,
             text: this.state.text,
             image_link: this.state.image_link
-        }
-        //  debugger
+        }  
         this.props.addRecipes(recipe)
         this.setState({
             title: "",
             text: "",
             image_link: "",
         })        
-        // let createRecipeConfig = {
-        //     method: 'POST',
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         "title": this.state.title,
-        //         "text": this.state.text,
-        //         "image_link": this.state.image_link
-        //     })
-        // };
-        // fetch("http://localhost:3001/recipes", createRecipeConfig)
-        // .then(response => response.json())
-         this.props.history.push('/recipes');
+        this.props.history.push('/recipes');
     };
 
     render() {

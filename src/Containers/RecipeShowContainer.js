@@ -1,19 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import HomeLink from '../Components/HomeLink'
-
 import { connect } from 'react-redux'
 
-
-
-class RecipeShowContainer extends React.Component{
-
-            
-            
-            
-        
+class RecipeShowContainer extends React.Component{                           
     render() {
-
         return (
             <div>
                 <h1>{this.props.recipe.attributes.title}</h1>
@@ -21,14 +11,13 @@ class RecipeShowContainer extends React.Component{
                 <p>{this.props.recipe.attributes.text}</p>
                 
                 <Link to="/recipes">Back</Link> 
-            </div>
-            
+            </div>            
         )
     }
 }
 
 const grabInfoFromStore = (stateFromStore) => {
-    // debugger
     return stateFromStore
 }
+
 export default connect(grabInfoFromStore)(RecipeShowContainer);
