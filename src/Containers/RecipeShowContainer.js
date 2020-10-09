@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
+import HomeLink from '../Components/HomeLink';
 
 class RecipeShowContainer extends React.Component{                           
     render() {
@@ -10,7 +11,8 @@ class RecipeShowContainer extends React.Component{
                 <img src={this.props.recipe.attributes.image_link} ></img>
                 <p>{this.props.recipe.attributes.text}</p>
                 
-                <Link to="/recipes">Back</Link> 
+                <Link to="/recipes">Back</Link>
+                <HomeLink /> 
             </div>            
         )
     }

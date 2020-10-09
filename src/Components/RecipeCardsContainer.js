@@ -4,7 +4,7 @@ import AtoZ from '../Components/AtoZ'
 import ZtoA from '../Components/ZtoA'
 
 const RecipeCardsContainer = (props) => {
-    console.log(props.recipes)
+    // console.log(props.recipes)
         if (!props.recipes) {
         return <div>Loading...</div>
     }
@@ -25,7 +25,7 @@ const RecipeCardsContainer = (props) => {
     return (
         <div className="RecipeCardsContainer">
             <h1>Recipes:</h1>
-                <div class="sorting">
+                <div className="sorting">
                     <button onClick={() => props.alphabetize('az')}><AtoZ /></button>
                     <button onClick={() => props.alphabetize('za')}><ZtoA /></button>
                 </div>

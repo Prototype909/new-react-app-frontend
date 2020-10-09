@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import { addRecipes } from '../Actions/RecipeActions'
+import HomeLink from '../Components/HomeLink'
 
 class CreateRecipeContainer extends React.Component{
     constructor(props) {
@@ -74,6 +75,8 @@ class CreateRecipeContainer extends React.Component{
                     <input type="submit" value="Submit" /><br/>
                     
                     <Link to="/recipes">Back</Link> 
+                    <HomeLink />
+
                 </form>
             </div>
         )
