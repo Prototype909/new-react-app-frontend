@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import fetchRecipes from '../Actions/RecipeActions'
 import { Route, Switch } from 'react-router-dom';
 import CreateRecipeContainer from './CreateRecipeContainer.js';
-import RecipeShowContainer from './RecipeShowContainer.js';
+import RecipeShowContainer from '../Components/RecipeShowContainer.js';
 
 class RecipesContainer extends React.Component{
      constructor() {

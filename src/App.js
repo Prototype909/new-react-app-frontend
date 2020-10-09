@@ -4,10 +4,8 @@ import {
   BrowserRouter as Router,
   Route, Switch
 } from 'react-router-dom';
-import HomeContainer from './Containers/HomeContainer.js';
+import HomeContainer from './Components/HomeContainer.js';
 import RecipesContainer from './Containers/RecipesContainer.js';
-// import CreateRecipeContainer from './Containers/CreateRecipeContainer.js';
-// import RecipeShowContainer from './Containers/RecipeShowContainer.js';
 import { NavBar} from './Components/NavBar'
 
 
