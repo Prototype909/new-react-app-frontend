@@ -26,7 +26,6 @@ class RecipesContainer extends React.Component{
             return this.props.recipes.sort((a,b) => (b.attributes.title > a.attributes.title) ? 1 : -1)
         }
         else {
-            console.log("here")
             return this.props.recipes
         }
     }
@@ -42,7 +41,7 @@ class RecipesContainer extends React.Component{
             return <h1>Loading</h1>
         }
         return (
-            <div>
+            <div className="RecipeDisplay">
                 <Switch>
                     <Route exact path='/recipes' >
                         <RecipeCardsContainer

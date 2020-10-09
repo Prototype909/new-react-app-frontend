@@ -30,21 +30,3 @@ export default function fetchRecipes() {
             })
         }
     }
-// export const addRecipes = (recipes) => {
-//         const createRecipeConfig = {
-//             method: 'POST',
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify(recipes)
-//         };
-//     return (dispatch) => {
-//         fetch(baseURL, createRecipeConfig)
-//         .then(res => res.json())
-//         .then(recipes => {
-//             console.log(recipes)
-//             dispatch({type:'ADD_RECIPES', payload: recipes})
-//         })
-//     };
-// }

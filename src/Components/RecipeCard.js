@@ -6,7 +6,7 @@ const RecipeCard = (props) => {
         return ( 
             <div>{props.recipe.attributes.title}<br/>
                 {props.recipe.attributes.text}<br/>
-                <div><img src={props.recipe.attributes.image_url}/></div>
+                <div><img src={props.recipe.attributes.image_url} alt={this.propls.recipe.attributes.image_link}/></div>
             </div>)
     }
     else {

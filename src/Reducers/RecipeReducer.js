@@ -5,7 +5,7 @@ export default function RecipeReducer(state = {recipes: [], isLoading: true}, ac
         case 'FETCHING_RECIPES':
             return {...state, isLoading: true}
         case 'ADD_RECIPES':
-            return { ...state, recipes: [...state.recipes, action.payload] }
+            return { ...state, recipes: [...state.recipes, action.payload.data] }
         default:
             return state
     }

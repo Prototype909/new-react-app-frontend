@@ -1,9 +1,17 @@
 .App {
   text-align: center;
-  background-image: url(./Assets/cooking.jpg);
+  /* background-image: url(./Assets/cooking.jpg);
     background-size: cover;
-    
-  
+ 
+   */
+}
+
+.showImage {
+  width: 40vw;
+}
+
+.RecipeDisplay {
+  margin: 50px;
 }
 
 
