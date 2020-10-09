@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const RecipeCard = (props) => {
-    console.log(props);
     if (!!props.recipe) {
         return ( 
             <div>{props.recipe.attributes.title}<br/>

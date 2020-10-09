@@ -20,14 +20,10 @@ class RecipesContainer extends React.Component{
 
     orderRecipes = () => {
         if ( this.state.filter === 'az') { 
-            console.log(this.props.recipes.sort((a,b)=> (a.title > b.title ? 1 : -1))
-            )     
-            return this.props.recipes.sort((a,b)=> (a.title > b.title ? 1 : -1))
-
-            // return this.props.recipes.sort((a, b) => (a.title > b.title) ? 1 : -1)
+           return this.props.recipes.sort((a,b)=> (a.attributes.title > b.attributes.title ? 1 : -1))
         }
         else if (this.state.filter === 'za') {
-            return this.props.recipes.sort((b, a) => (b.title > a.title) ? 1 : -1)
+            return this.props.recipes.sort((a,b) => (b.attributes.title > a.attributes.title) ? 1 : -1)
         }
         else {
             console.log("here")

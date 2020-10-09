@@ -4,7 +4,6 @@ import AtoZ from '../Components/AtoZ'
 import ZtoA from '../Components/ZtoA'
 
 const RecipeCardsContainer = (props) => {
-    // console.log(props.recipes)
         if (!props.recipes) {
         return <div>Loading...</div>
     }
