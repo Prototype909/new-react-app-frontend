@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class RecipeShowContainer extends React.Component{                           
     render() {
         return (
-            <div>
+            <div><br/><br/>
                 <h1>{this.props.recipe.attributes.title}</h1>
                 <img src={this.props.recipe.attributes.image_link} ></img>
                 <p>{this.props.recipe.attributes.text}</p>
