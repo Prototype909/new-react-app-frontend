@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import HomeLink from './HomeLink';
+import HomeLink from '../Components/HomeLink';
 
 const RecipeShowContainer = (props) => {
     return (
@@ -13,7 +13,10 @@ const RecipeShowContainer = (props) => {
             <HomeLink /> 
         </div>            
     )
+
 }
+
+
 
 
 export default RecipeShowContainer;
